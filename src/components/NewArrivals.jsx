@@ -137,6 +137,10 @@ const NewArrivals = () => {
             productTitle={"Basic Crew Neck Tee"}
             label={"new"}
             labelShow={false}
+            
+
+
+            
           />
           <Product
             className={"lg:w-[22%] sm:w-[46%] w-full"}
