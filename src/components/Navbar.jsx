@@ -47,6 +47,7 @@ const Navbar = () => {
                 linkClassName={
                   "sm:hover:text-[#262626] transition-colors  sm:py-0 sm:px-0 py-4 pl-5  block"
                 }
+                link={"/about"}
               />
               <ListItem
                 listItemName={"contacts"}

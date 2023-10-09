@@ -20,7 +20,7 @@ const Product = ({
           {label}
         </div>
       )}
-      <Img src={productImg} />
+      <Img src={productImg} imgClassName={"w-full"}/>
       <div className="absolute w-full bg-white bottom-[-250px] left-0 text-right font-dm text-base text-[#767676] py-[25px] px-[30px] group-hover:bottom-12 transition-all">
         <h6>
           Add to Wish List{" "}
