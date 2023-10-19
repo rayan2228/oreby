@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
 import Container from "../components/layouts/Container";
 import SideBar from "../components/layouts/SideBar";
 import Flex from "../components/layouts/Flex";
-import Product from "../components/layouts/Product";
-import Product1 from "../assets/product.png";
+
 import Filter from "../components/layouts/Filter";
 import { BsFillGridFill, BsListTask } from "react-icons/bs";
+import Paginate from "../components/layouts/Paginate";
 const Shop = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const getProducts = async () => {
+      await fetch("https://dummyjson.com/products?limit=100")
+        .then((result) => result.json())
+        .then((data) => setProducts(data.products));
+    };
+    getProducts();
+  }, []);
   return (
-    <section className="pt-[124px] pb-36">
+    <section className="pt-[124px] pb-36 ">
       <Container>
         <Breadcrumb
           title={"products"}
@@ -18,7 +27,7 @@ const Shop = () => {
           currentPage={"products"}
           currentPageLink={window.location.pathname}
         />
-        <Flex className={"gap-x-10 mt-32"}>
+        <Flex className={"gap-x-10 mt-32 relative"}>
           <SideBar />
           <div className="w-[74%] ">
             <Flex className={" items-center  mb-16 "}>
@@ -37,90 +46,8 @@ const Shop = () => {
                 </Filter>
               </Flex>
             </Flex>
-            <Flex
-              className={" gap-x-[34px] flex-wrap  gap-y-[50px] justify-center"}
-            >
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-              <Product
-                className={"w-[31%]"}
-                productImg={Product1}
-                productPrice={"$44.00"}
-                productTitle={"Basic Crew Neck Tee"}
-                label={"new"}
-                labelShow={true}
-              />
-            </Flex>
+
+            <Paginate itemsPerPage={12} data={products} />
           </div>
         </Flex>
       </Container>

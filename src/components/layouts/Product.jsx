@@ -20,19 +20,21 @@ const Product = ({
           {label}
         </div>
       )}
-      <Img src={productImg} imgClassName={"w-full"}/>
-      <div className="absolute w-full bg-white bottom-[-250px] left-0 text-right font-dm text-base text-[#767676] py-[25px] px-[30px] group-hover:bottom-12 transition-all">
-        <h6>
-          Add to Wish List{" "}
-          <AiFillHeart className="inline-block ml-4 text-black" />
-        </h6>
-        <h6 className="my-5">
-          Compare <BiGitCompare className="inline-block ml-4 text-black" />
-        </h6>
-        <h6>
-          Add to Cart{" "}
-          <FaShoppingCart className="inline-block ml-4 text-black" />
-        </h6>
+      <div className="relative">
+        <Img src={productImg} imgClassName={" w-[382px] h-[382px]"} />
+        <div className="absolute w-full bg-white bottom-[-250px] left-0 text-right font-dm text-base text-[#767676] py-[25px] px-[30px] group-hover:bottom-[0] transition-all">
+          <h6>
+            Add to Wish List{" "}
+            <AiFillHeart className="inline-block ml-4 text-black" />
+          </h6>
+          <h6 className="my-5">
+            Compare <BiGitCompare className="inline-block ml-4 text-black" />
+          </h6>
+          <h6>
+            Add to Cart{" "}
+            <FaShoppingCart className="inline-block ml-4 text-black" />
+          </h6>
+        </div>
       </div>
       <Flex className={"justify-between  mt-[18px]"}>
         <h1 className="text-xl font-bold text-[#262626]">{productTitle}</h1>
