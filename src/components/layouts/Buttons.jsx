@@ -1,11 +1,11 @@
 import React from "react";
-
-const Buttons = ({ title, className, linkClassName }) => {
+import { Link } from "react-router-dom";
+const Buttons = ({ title, className, linkClassName, link }) => {
   return (
     <div className={className}>
-      <a href="" className={linkClassName}>
+      <Link to={link} className={linkClassName}>
         {title}
-      </a>
+      </Link>
     </div>
   );
 };

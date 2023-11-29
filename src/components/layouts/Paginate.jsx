@@ -11,6 +11,8 @@ const Paginate = ({ itemsPerPage, data }) => {
         {currentItems &&
           currentItems.map((product) => (
             <Product
+              key={product.id}
+              link={`/shop/${product.id}`}
               className={"w-[31%]"}
               productImg={product.thumbnail}
               productPrice={`$ ${product.price}`}

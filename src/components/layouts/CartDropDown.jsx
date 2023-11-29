@@ -6,6 +6,7 @@ import Img from "./Img";
 import CartImg from "../../assets/cartimg.png";
 import { ImCross } from "react-icons/im";
 import Buttons from "./Buttons";
+
 const CartDropDown = () => {
   let [cartShow, setCartShow] = useState(false);
 
@@ -44,6 +45,7 @@ const CartDropDown = () => {
             </h6>
             <Flex className={"gap-x-5 mt-5"}>
               <Buttons
+                link={"/cart"}
                 title={"View Cart"}
                 linkClassName={
                   "px-10 py-4 border border-[#2B2B2B] font-dm text-sm font-bold"
